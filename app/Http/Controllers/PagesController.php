@@ -23,7 +23,7 @@ class PagesController extends Controller
 
     public function nosotros($nombre = null)
     {
-        $equipo = ['Ignacio', 'Juanito', 'Pedrito'];
+        $equipo = ['Alex', 'Pipo', 'Muzka'];
         //return view('nosotros', ['equipo' => $equipo, 'nombre']=>$nombre);
         return view('nosotros', compact('equipo', 'nombre'));
     }
