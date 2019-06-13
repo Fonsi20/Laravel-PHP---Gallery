@@ -21,4 +21,10 @@ Route::get('fotos', function () {
 
 Route::get('blog', function () {
     return view('blog');
-})->name('noticia');
+})->name('blog');
+
+Route::get('nosotros/{nombre?}', function ($nombre = null) {
+    $equipo = ['Ignacio', 'Juanito', 'Pedrito'];
+    //return view('nosotros', ['equipo' => $equipo, 'nombre']=>$nombre);
+    return view('nosotros', compact('equipo','nombre'));
+})->name('nosotros');
