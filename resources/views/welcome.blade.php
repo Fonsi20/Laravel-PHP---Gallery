@@ -38,7 +38,7 @@
             <div class="form-group">
               <label>Descipcion</label>
               <input value ="{{old('descripcion')}}" type="text" name="descripcion" class="form-control" placeholder="Descripcion">
-              <small class="form-text text-muted">Maximo 120 caracteres.</small>
+              <small class="form-text text-muted">Maximo 191 caracteres.</small>
             </div>
             <button type="submit" class="btn btn-primary btn-block mb-4">Agregar</button>
           </form>
