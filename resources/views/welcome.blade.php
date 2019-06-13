@@ -60,12 +60,18 @@
                         <td>{{$item->nombre}}</td>
                         <td>{{$item->descripcion}}</td>
                         <td>{{$item->created_at}}</td>
-                        <td class="input-group">
+                        <td>
                             <a class="btn btn-info btn-sm" href="{{route('notas.detalle',$item)}}">More Info</a>
                             <a class="btn btn-warning btn-sm" href="{{route('notas.editar',$item)}}">Editar</a>
+                            <form class="d-inline" action="{{route('notas.eliminar',$item)}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
           </table>
+          {{$notas->links()}}
           @endsection

@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     public function inicio()
     {
-        $notas = App\Nota::all();
+        $notas = App\Nota::paginate(4);
         return view('welcome', compact('notas'));
     }
 
@@ -63,5 +63,12 @@ class PagesController extends Controller
         $notaUpdate->descripcion = $request->descripcion;
         $notaUpdate->save();
         return back()->with('mensaje', 'Nota actualizada');
+    }
+
+    public function eliminar($id)
+    {
+        $notaEliminar = App\Nota::findOrFail($id);
+        $notaEliminar->delete();
+        return back()->with('mensaje', 'Nota Eliminada');
     }
 }
