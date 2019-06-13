@@ -3,6 +3,28 @@
 @section('seccion')
 
     <h1 class="display-4">Notas</h1>
+
+    @if (session('mensaje'))
+    <div class="alert alert-success">
+        {{session('mensaje')}}
+    </div>
+        
+    @endif
+
+    <form action="{{route('notas.crear')}}" method="POST">
+        @csrf
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" name="nombre" class="form-control" aria-describedby="Nombre Helper" placeholder="Introduce un nombre">
+              <small class="form-text text-muted">Los datos introducidos apareceran en la tabla de abajo.</small>
+            </div>
+            <div class="form-group">
+              <label>Descipcion</label>
+              <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Agregar</button>
+          </form>
+
     <table class="table">
             <thead class="thead-dark">
               <tr>

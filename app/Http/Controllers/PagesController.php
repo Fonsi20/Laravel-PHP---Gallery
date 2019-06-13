@@ -35,4 +35,13 @@ class PagesController extends Controller
         $nota = App\Nota::findOrFail($id);
         return view('notas.detalle', compact('nota'));
     }
+
+    public function crear(Request $request)
+    {
+        $notaNueva = new App\Nota;
+        $notaNueva->nombre = $request->nombre;
+        $notaNueva->descripcion = $request->descripcion;
+        $notaNueva->save();
+        return back()->with('mensaje', 'Nota Agregada');
+    }
 }
