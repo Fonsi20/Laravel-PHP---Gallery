@@ -29,4 +29,10 @@ class PagesController extends Controller
         //return view('nosotros', ['equipo' => $equipo, 'nombre']=>$nombre);
         return view('nosotros', compact('equipo', 'nombre'));
     }
+
+    public function detalle($id)
+    {
+        $nota = App\Nota::findOrFail($id);
+        return view('notas.detalle', compact('nota'));
+    }
 }

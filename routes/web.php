@@ -1,6 +1,8 @@
 <?php
 
-Route::get('/', 'PagesController@inicio');
+Route::get('/', 'PagesController@inicio')->name('inicio');
+
+Route::get('/detalle/{id}', 'PagesController@detalle')->name('notas.detalle');
 
 Route::get('fotos', 'PagesController@fotos')->name('foto');
 
