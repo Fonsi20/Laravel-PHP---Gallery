@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('seccion')
-<h1>Este es mi equipo de trabajo:</h1>
+<h1 class="display-4">Este es mi equipo de trabajo:</h1>
 
 @foreach ($equipo as $item)
 <a href="{{route('nosotros',$item)}}" class="h4 text-primary">{{$item}}</a></br>
