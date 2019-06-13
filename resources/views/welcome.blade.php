@@ -13,14 +13,32 @@
 
     <form action="{{route('notas.crear')}}" method="POST">
         @csrf
+
+        @error('nombre')
+            <div class="div alert alert-danger">Campo Nombre vacio. 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+        @enderror
+
+        @error('descripcion')
+            <div class="div alert alert-danger">Campo Descripcion vacio.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">X</span>
+                        </button>
+            </div>
+        @enderror
+
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" name="nombre" class="form-control" aria-describedby="Nombre Helper" placeholder="Introduce un nombre">
+              <input value ="{{old('nombre')}}" type="text" name="nombre" class="form-control" aria-describedby="Nombre Helper" placeholder="Introduce un nombre">
               <small class="form-text text-muted">Los datos introducidos apareceran en la tabla de abajo.</small>
             </div>
             <div class="form-group">
               <label>Descipcion</label>
-              <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+              <input value ="{{old('descripcion')}}" type="text" name="descripcion" class="form-control" placeholder="Descripcion">
+              <small class="form-text text-muted">Maximo 120 caracteres.</small>
             </div>
             <button type="submit" class="btn btn-primary btn-block mb-4">Agregar</button>
           </form>
@@ -42,7 +60,10 @@
                         <td>{{$item->nombre}}</td>
                         <td>{{$item->descripcion}}</td>
                         <td>{{$item->created_at}}</td>
-                        <td><a class="btn btn-info" href="{{route('notas.detalle',$item)}}">More Info</a></td>
+                        <td class="input-group">
+                            <a class="btn btn-info btn-sm" href="{{route('notas.detalle',$item)}}">More Info</a>
+                            <a class="btn btn-warning btn-sm" href="{{route('notas.editar',$item)}}">Editar</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

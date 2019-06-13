@@ -13,16 +13,20 @@
 </head>
 
 <body>
-    <div class="container my-5">
-        <a href="{{route('inicio')}}" class="btn btn-primary">Home</a>
-        <a href="{{route('foto')}}" class="btn btn-primary">Fotos</a>
-        <a href="{{route('blog')}}" class="btn btn-primary">Blog</a>
-        <a href="{{route('nosotros')}}" class="btn btn-primary">Nosotros</a>
+    <div class="container my-4 nav justify-content-end">
+            <li class="nav-item">
+        <a href="{{route('inicio')}}" class="nav-link">Home</a>  </li>
+        <li class="nav-item">
+        <a href="{{route('foto')}}" class="nav-link">Fotos</a>  </li>
+        <li class="nav-item">
+        <a href="{{route('blog')}}" class="nav-link">Blog</a>  </li>
+        <li class="nav-item">
+        <a href="{{route('nosotros')}}" class="nav-link">Nosotros</a>  </li>
     </div>
     <div class="container">
         @yield('seccion')
     </div>
-    <div class="container bg-dark text-white text-center">Footer</div>
+    <div class="fixed-bottom bg-dark text-white text-center">Footer</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -38,10 +38,30 @@ class PagesController extends Controller
 
     public function crear(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required'
+        ]);
+
         $notaNueva = new App\Nota;
         $notaNueva->nombre = $request->nombre;
         $notaNueva->descripcion = $request->descripcion;
         $notaNueva->save();
         return back()->with('mensaje', 'Nota Agregada');
+    }
+
+    public function editar($id)
+    {
+        $nota = App\Nota::findOrFail($id);
+        return view('notas.editar', compact('nota'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $notaUpdate = App\Nota::findOrFail($id);
+        $notaUpdate->nombre = $request->nombre;
+        $notaUpdate->descripcion = $request->descripcion;
+        $notaUpdate->save();
+        return back()->with('mensaje', 'Nota actualizada');
     }
 }
