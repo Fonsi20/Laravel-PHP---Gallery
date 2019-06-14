@@ -20,7 +20,8 @@ class PagesController extends Controller
 
     public function blog()
     {
-        return view('blog');
+        $blog = App\blog::paginate(4);
+        return view('blog', compact('blog'));
     }
 
     public function nosotros($nombre = null)
