@@ -52,44 +52,6 @@
       
           </div>
           <!-- Grid row-->
-          <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-      
-          <!-- Grid row-->
-          <div class="row pb-3">
-      
-            <!-- Grid column -->
-            <div class="col-md-12">
-      
-              <div class="mb-5 flex-center">
-      
-                <!-- Facebook -->
-                <a class="fb-ic">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <!-- Twitter -->
-                <a class="tw-ic">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <!--Linkedin -->
-                <a class="li-ic">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <!--Instagram-->
-                <a class="ins-ic">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <!--Github-->
-                <a class="git-ic">
-                    <i class="fab fa-github"></i>
-                </a>
-      
-              </div>
-      
-            </div>
-            <!-- Grid column -->
-      
-          </div>
-          <!-- Grid row-->
       
         </div>
         <!-- Footer Links -->

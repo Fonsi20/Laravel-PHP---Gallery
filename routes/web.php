@@ -12,7 +12,7 @@ Route::put('/editar/{id}', 'PagesController@update')->name('notas.update');
 
 Route::delete('eliminar/{id}','PagesController@eliminar')->name('notas.eliminar');
 
-Route::get('fotos', 'PagesController@fotos')->name('foto');
+Route::get('fotos/{nombre?}', 'PagesController@fotos')->name('foto');
 
 Route::get('blog', 'PagesController@blog')->name('blog');
 

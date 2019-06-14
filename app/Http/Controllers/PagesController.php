@@ -26,7 +26,7 @@ class PagesController extends Controller
 
     public function nosotros($nombre = null)
     {
-        $equipo = ['Alex', 'Pipo', 'Muzka'];
+        $equipo = App\User::paginate(3);
         //return view('nosotros', ['equipo' => $equipo, 'nombre']=>$nombre);
         return view('nosotros', compact('equipo', 'nombre'));
     }
