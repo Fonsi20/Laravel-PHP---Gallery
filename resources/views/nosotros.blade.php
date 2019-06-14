@@ -7,7 +7,7 @@
         <div class="row">
             @foreach ($equipo as $item)
                 <div class="col my-4 p-5" style="text-align:center">
-                        <img src="images\foto9.jpg" class="card-img-top" style="border-radius: 50%; background-position: 50%; background-size: 100% auto; width: 200px; height: 200px" alt="images\foto1.jpg">
+                        <img src="/images/foto9.jpg" class="card-img-top" style="border-radius: 50%; background-position: 50%; background-size: 100% auto; width: 200px; height: 200px" alt="images/foto1.jpg">
                         <div class="card-body">
                           <a href="{{route('nosotros',$item->name)}}" class="h4 text-primary">{{$item->name}}</a></br>
                         </div>
