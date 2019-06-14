@@ -13,9 +13,9 @@ class PagesController extends Controller
         return view('welcome', compact('notas'));
     }
 
-    public function fotos()
+    public function fotos($nombre = null)
     {
-        return view('fotos');
+        return view('fotos', compact('nombre'));
     }
 
     public function blog()
